@@ -25,7 +25,6 @@ const Movie = props => {
   //   const addToSavedList = props.addToSavedList;
   //   addToSavedList(movie)
   // }
-
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
