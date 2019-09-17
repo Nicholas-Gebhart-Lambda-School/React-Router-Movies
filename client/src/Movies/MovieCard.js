@@ -13,15 +13,18 @@ const MovieCard = props => {
       </div>
       <h3>Actors</h3>
 
-      {props.movie.stars.map(star => (
-        <div key={star} className="movie-star">
-          {star}
-        </div>
-      ))}
+      {props.movie.stars &&
+        props.movie.stars.map(star => (
+          <div key={star} className="movie-star">
+            {star}
+          </div>
+        ))}
       <br />
-      <Link to={`/movies/${props.movie.id}`}>
-        Read more about {props.movie.title}
-      </Link>
+      {!props.detail ? (
+        <Link to={`/movies/${props.movie.id}`}>
+          Read more about {props.movie.title}
+        </Link>
+      ) : null}
     </div>
   );
 };
